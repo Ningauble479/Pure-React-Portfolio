@@ -1,38 +1,409 @@
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+
+
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-family:sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #83aca6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.themePicker {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid black;
+  caret-color: transparent;
+  z-index: 999;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.themePickerOuter {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.themeBox:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+.themeFrame {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+.professionalNavigator {
+  width: 70%;
+  height: 20%;
+  border-Bottom: 2px solid black;
+  align-self: flex-end;
+  margin-right: 10%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  z-index: 101;
+  user-select: none; /* Standard syntax */
+}
+
+.professionalNavigatorObject {
+  margin-right: 25px;
+  margin-left: 25px;
+  font-size: .75em;
+  margin-bottom: -2px;
+  padding-bottom: 10px;
+  transition: color .2s;
+}
+
+.active {
+  border-bottom: 2px solid #4756ad;
+  color: #4756ad;
+}
+
+.professionalNavigatorObject:hover {
+  cursor: pointer;
+  color: #4756ad;
+  transition: color .2s;
+}
+
+.professionalPage {
+  max-width: 100vw;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+/*? Reusable -------------------------------------------------------------------------------------  */
+
+.u-non-blurred {
+  position: relative;
+  z-index: 1;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+/*! Professional Frame CSS  ------------------------------------------------------------------------------------- */
+.professionalFrame {
+  z-index: 100;
+}
+
+.professionalFramePadding {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+
+.backdropFilter {
+  overflow: auto;
+  position: relative;
+  color: black;
+}
+
+.backdropFilter::after {
+  -webkit-backdrop-filter: blur(10px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+  backdrop-filter: blur(10px); /* Supported in Chrome 76 */
+  margin-left: -20vw;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+/* Frame One  -------------------------------------------------------------------------------------  */
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-15%);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateX(0);
   }
 }
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.aboutFrameOne {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutFrameHeader {
+  display: flex;
+  flex-direction: row;
+  min-height: 91vh;
+}
+
+.aboutFramePicture {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.aboutFrameInfo {
+  width: 50vw;
+  text-align: left;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2em;
+  animation: .2s ease-out 0s 1 slideInFromLeft;
+}
+
+.smallerText {
+  font-size: 1em;
+  margin-left: -15vw;
+}
+
+.jobTitle {
+  margin-left: -13vw;
+}
+
+.age {
+  margin-left: -11vw;
+}
+
+.location {
+  margin-left: -9vw;
+}
+
+.name {
+  margin-left: -5vw;
+}
+
+.backgroundTop {
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-image: url('../Pictures/TopImage.png');
+  height: 100%;
+  z-index: 1;
+  background-repeat: no-repeat;
+  animation: .2s ease-out 0s 1 slideInFromTop;
+}
+
+.frame1 {
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-image: url('../Pictures/TopImageAnimFrame1.jpg');
+  height: 100%;
+  z-index: 1;
+  background-repeat: no-repeat;
+  animation: .2s ease-out 0s 1 slideInFromTop;
+}
+
+.frame2 {
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-image: url('../Pictures/TopImageAnimFrame2.jpg');
+  height: 100%;
+  z-index: 1;
+  background-repeat: no-repeat;
+  animation: .2s ease-out 0s 1 slideInFromTop;
+}
+
+/* Frame Two ------------------------------------------------------------------------------------- */
+.professionalFrameTwo {
+  background: -moz-linear-gradient(top, rgba(131,172,166,1) 0%, rgba(75, 77, 82,1) 10%, rgba(75, 77, 82,0.7) 90%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(131,172,166,1) 0%,rgba(75, 77, 82,1) 10%,rgba(75, 77, 82,0.7) 90%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(131,172,166,1) 0%,rgba(75, 77, 82,1) 10%,rgba(75, 77, 82,0.7) 90%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.professionalFrameTwo .frameText {
+  max-width: 50vw;
+  align-self: flex-end;
+}
+
+.cardHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  width: 80vw;
+  height: 100vh;
+}
+
+/* Frame Three ------------------------------------------------------------------------------------- */
+
+.professionalFrameThree {
+  margin-left: -5vw;
+  flex-direction: column;
+  display: flex;
+}
+
+.professionalFrameThree .frameText {
+  max-width: 50vw;
+  align-self: flex-start
+}
+
+/* Frame Four ------------------------------------------------------------------------------------- */
+
+.professionalFrameFour {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#83aca6+0,7db9e8+100&1+0,1+40,0.7+54,0.7+54,0+100 */
+background: -moz-linear-gradient(top, rgba(131,172,166,1) 0%, rgba(129,177,192,1) 40%, rgba(128,179,201,0.7) 54%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(131,172,166,1) 0%,rgba(129,177,192,1) 40%,rgba(128,179,201,0.7) 54%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(131,172,166,1) 0%,rgba(129,177,192,1) 40%,rgba(128,179,201,0.7) 54%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83aca6', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+.professionalFrameFour p {
+  width: 40vw;
+}
+
+.professionalFrameFour h1 {
+  width: 40vw;
+}
+
+.geekSquadPicture {
+  content: " ";
+  min-width: 30vw;
+  min-height: 40vh;
+  margin-left: -20vw;
+  background-image: url('../Pictures/pc-mechanic-svgrepo-com.svg');
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.background {
+  
+  overflow: hidden;
+  margin-left: -15vw;
+  background-image: linear-gradient(to bottom, rgba(131,172,166,1) 0%,rgba(131,172,166,1) 10%,rgba(131,172,166,0.5) 30%,rgba(131,172,166,0) 50%,rgba(131,172,166,0.5) 70%,rgba(131,172,166,1) 90%,rgba(131,172,166,1) 100%),
+  url('../Pictures/GeekSquadBackground.jpg');
+  background-size: cover;
+  width: 59vw;
+  height: 100%;
+  padding-left: 20vw;
+  padding-right: 20vw;
+}
+
+/* Frame Five ------------------------------------------------------------------------------------- */
+
+/* Frame Six  ------------------------------------------------------------------------------------- */
+
+
+
+
+ /* Hacking Minigame -------------------------------------------------------------------------------------*/
+
+ .hackingMinigameWrapper {
+    width: 100vw;
+    height: 100vw;
+ }
+
+ .hackingMinigameRows {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+ }
+
+ .hackingMinigameColumn {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+ }
+
+ .hackingMinigameRow {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  border: 1px solid black;
+ }
+
+ .highlight {
+  background-color:#4756ad;
+ }
+
+ .letter {
+  width: 8.3333%;
+ }
+
+ .letter:hover {
+  cursor: pointer;
+ }
+
+ .hackingMinigameTextbox {
+  width: 18%;
+  height: 58vh;
+  overflow: hidden;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+ }
+
+ .angled-gradient {
+  border-bottom-right-radius: 100%;
+  background: -webkit-linear-gradient(135deg,red,yellow,green);
+  background: linear-gradient(-45deg, #abb614,#c8ca28,#83aca6);
+  z-index: 1;
+ }
+
+ .card {
+  color: #fff;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  width: 15vw;
+  height: 40vh;
+  background: gray
+ }

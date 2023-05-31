@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import '../Style/App.css';
+import { ThemePicker } from '../Components/ThemePicker'
+import { ThemeArea } from '../Context/ThemeContext';
+import { ThemeFrame } from '../Components/ThemeFrame';
+import React from 'react';
+import { PageRouteArea } from '../Context/PageRouteContext';
+import { AboutArea } from '../Context/AboutContext';
 
-function App() {
+export const App = () => {
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ThemeArea initialTheme={"Professional"}>
+        <PageRouteArea initialPageRoute={"About"}>
+        <AboutArea>
+          <ThemePicker/>
+          <ThemeFrame/>
+        </AboutArea>
+        </PageRouteArea>
+        </ThemeArea>
       </header>
     </div>
   );
 }
-
-export default App;
