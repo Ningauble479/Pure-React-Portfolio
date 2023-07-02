@@ -3,9 +3,8 @@ import React, { createContext, useEffect, useState } from 'react'
 
 const listOfRoutes = [
     "About",
-    "Contact Me",
     "Projects",
-    "Programming Languages",
+    "Contact Me",
     "Resume"
 ]
 

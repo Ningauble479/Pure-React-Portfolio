@@ -8,7 +8,7 @@ export const ProfessionalNavigator = () => {
     return(
         <div className='professionalNavigator'>
             {routeList.map((route)=>{
-                const active =  route === currentTab ? 'active' : null
+                const active = route === currentTab ? 'active' : null
                 return(
                     <div className={`professionalNavigatorObject ${active}`} onClick={()=>setCurrentTab(route)}>{route}</div>
                 )

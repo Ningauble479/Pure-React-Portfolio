@@ -6,12 +6,42 @@
   flex-direction: row;
 }
 
+.flex-column {
+  flex-direction: column;
+}
 
+.width-25 {
+  width: 25%
+}
 
+.width-50 {
+  width: 50%
+}
+
+.width-75 {
+  width: 75%
+}
+
+.width-100 {
+  width: 100%
+}
+
+.imgLink {
+  color: inherit;
+  text-decoration: inherit;
+}
 
 .App {
   text-align: center;
   font-family:sans-serif;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
 }
 
 .App-header {
@@ -257,10 +287,18 @@
 }
 
 /* Frame Two ------------------------------------------------------------------------------------- */
+
+/*? Old background effect
+  background: -moz-linear-gradient(top, rgba(131,172,166,1) 0%, rgba(75, 77, 82,1) 10%, rgba(75, 77, 82,0.7) 90%, rgba(125,185,232,0) 100%);  FF3.6-15 
+  background: -webkit-linear-gradient(top, rgba(131,172,166,1) 0%,rgba(75, 77, 82,1) 10%,rgba(75, 77, 82,0.7) 90%,rgba(125,185,232,0) 100%);  Chrome10-25,Safari5.1-6
+  background: linear-gradient(to bottom, rgba(131,172,166,1) 0%,rgba(75, 77, 82,1) 10%,rgba(75, 77, 82,0.7) 90%,rgba(125,185,232,0) 100%);  W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+*/
+
 .professionalFrameTwo {
-  background: -moz-linear-gradient(top, rgba(131,172,166,1) 0%, rgba(75, 77, 82,1) 10%, rgba(75, 77, 82,0.7) 90%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(131,172,166,1) 0%,rgba(75, 77, 82,1) 10%,rgba(75, 77, 82,0.7) 90%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(131,172,166,1) 0%,rgba(75, 77, 82,1) 10%,rgba(75, 77, 82,0.7) 90%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-color: rgba(75, 77, 82);
+  display: flex;
+  justify-content: flex-start;
+  width: 200vw
 }
 
 .professionalFrameTwo .frameText {
@@ -268,15 +306,72 @@
   align-self: flex-end;
 }
 
+.PFTAnimation {
+  width: 25vw;
+}
+
 .cardHolder {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  width: 80vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  width: 65vw;
   height: 100vh;
+  transition: ease-in .3s;
+}
+
+.cardHolderClosed {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 100vw;
+  z-index: 5;
+  background-color: rgba(75, 77, 82);
+  transition: ease-in .3s;
+  overflow: hidden;
+}
+
+.cardHolderOuter {
+  display: flex;
+  margin-left: 0;
+  transition: ease-in .3s;
+  background-color: rgba(75, 77, 82);
+  z-index: 5;
+}
+
+.cardFull {
+  color: #fff;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 3%;
+  padding-left: 15%;
+  padding-Right: 15%
+}
+
+.fullCardOpen {
+  position: absolute;
+  width: 100vw;
+  transition: ease-in .3s;
+}
+
+.fullCardClosed button {
+  display: none;
+}
+
+.fullCardOpen p {
+  font-size: large;
+}
+
+.card:hover {
+  background-color: orange;
+  cursor: pointer;
 }
 
 /* Frame Three ------------------------------------------------------------------------------------- */
@@ -288,8 +383,47 @@
 }
 
 .professionalFrameThree .frameText {
-  max-width: 50vw;
+  width: 80vw;
   align-self: flex-start
+}
+
+.cardCover {
+  background-color: rgba(75, 77, 82, 0.5);
+  width: 30vw;
+  position: fixed;
+  height: 0;
+  transition: .5s height;
+  overflow: hidden;
+}
+
+.cardHover {
+  position: fixed;
+  height: 30vh;
+  background-color: rgba(75, 77, 82, 0.8);
+  transition: .5s height;
+  width: 30vw;
+  overflow: hidden;
+}
+
+.professionalPCard {
+  border: 1px solid black;
+  height: 30vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  background-size: contain;
+}
+
+.professionalPCard h2 {
+  justify-self: flex-start;
+}
+
+.projectCardContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
 }
 
 /* Frame Four ------------------------------------------------------------------------------------- */

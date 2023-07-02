@@ -8,10 +8,10 @@ const ProfessionalAbout = () => {
         <>
             <ProfessionalFrame frameNumber={1}/>
             <ProfessionalFrame frameNumber={2}/>
-            <ProfessionalFrame frameNumber={3}/>
-            <ProfessionalFrame frameNumber={4}/>
-            <ProfessionalFrame frameNumber={5}/>
-            <ProfessionalFrame frameNumber={6}/>
+            {/* <ProfessionalFrame frameNumber={3}/> */}
+            {/* <ProfessionalFrame frameNumber={4}/> */}
+            {/* <ProfessionalFrame frameNumber={5}/> */}
+            {/* <ProfessionalFrame frameNumber={6}/> */}
         </>
     )
 }
